@@ -65,7 +65,7 @@ do
 	-gtf ${dir_gtf} \
 	-norm 1000000 \
 	-size given \
-	-d ${dir_out}/tag_directory ${dir_out}/tag_directory > ${dir_out}/combined_bed_annotated/${i}_annotated_intensity.txt
+	-d ${dir_out}/tag_directory_stim ${dir_out}/tag_directory_unstim > ${dir_out}/combined_bed_annotated/${i}_annotated_intensity.txt
 
 done
 
