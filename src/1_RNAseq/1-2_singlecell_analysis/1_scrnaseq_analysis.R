@@ -22,6 +22,8 @@ counts <- counts[,-2:-6]
 # gene id conversion
 converted_id <- convertid(counts$Geneid, attribs = c('ensembl_gene_id', 'external_gene_name', 'description'), host = "uswest.ensembl.org")
 
+write.csv(converted_id, "converted_id.csv")
+
 # make seurat object ------------------------------------------------------
 RNA_seurat <- CreateSeuratObject(counts %>% as.data.frame() %>% column_to_rownames("Geneid"))
 
@@ -196,6 +198,10 @@ counts_filtered <- counts_filtered %>% filter(Geneid %in% filtered_ensembl_id)
 bay_out <- bayNorm(counts_filtered %>% as.data.frame() %>% column_to_rownames("Geneid"), mean_version = TRUE, UMI_sffl = 10)
 
 bay_out_counts <- bay_out$Bay_out %>% as.data.frame() %>% rownames_to_column("Geneid") %>% as_tibble()
+
+# save normalized data as csv
+write_csv(bay_out_counts, "baynorm_normalized.csv")
+
 
 # create baynorm seurat object 
 baynorm_seurat <- CreateSeuratObject(counts = bay_out$Bay_out, assay = "bayNorm")
