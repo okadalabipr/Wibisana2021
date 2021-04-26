@@ -153,3 +153,27 @@ ggplot(all_df, aes(x = scaled_value_per_gene, y = state,
 ggsave("ridgeplot_scaled_per_gene.svg", width = 8, height = 12)
 
 
+
+# fano factor and CV calculation for all data at 10 and 0 ug/ml (baynorm normalized)
+count_fano <- function(cell_10_df, cell_0_df){
+  
+  # calculate cv
+  cell_10_df <- cell_10_df %>% mutate(mean = rowMeans(.[-1:-2]), sd = rowSds(as.matrix(.[-1:-2]))) %>% mutate(cv = (sd/mean)*100, fano = (sd^2/mean)) %>% dplyr::select(ensembl_gene_id, external_gene_name, mean_10 = mean, sd_10 = sd, cv_10 = cv, fano_10 = fano)
+  cell_0_df <- cell_0_df %>% mutate(mean = rowMeans(.[-1:-2]), sd = rowSds(as.matrix(.[-1:-2]))) %>% mutate(cv = (sd/mean)*100, fano = (sd^2/mean)) %>% dplyr::select(ensembl_gene_id, external_gene_name, mean_0 = mean, sd_0 = sd, cv_0 = cv, fano_0 = fano)
+  
+  # combine onto one data frame
+  cv_df <- inner_join(cell_10_df, cell_0_df, by = c("external_gene_name", "ensembl_gene_id"))
+  
+  return(cv_df)
+}
+
+bay_out_counts_dose <- list(
+  dose_10 = bay_out_counts_wide %>% select(1:2, contains("B04_")) ,
+  dose_0 = bay_out_counts_wide %>% select(1:2, contains("B00_"))
+)
+
+bay_out_counts_dose_fano <- count_fano(bay_out_counts_dose$dose_10,
+           bay_out_counts_dose$dose_0) %>% na.omit()
+
+
+write_csv(bay_out_counts_dose_fano, "baynorm_fano.csv")
