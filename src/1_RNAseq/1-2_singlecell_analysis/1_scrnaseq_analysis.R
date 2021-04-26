@@ -58,7 +58,7 @@ metadata <- metadata %>%
 # get mito genes
 source("mito_genes.R")
 
-mt <- read.table("../20191106_scrnaseqclustering/mitochondrial_genes.txt", stringsAsFactors = F)$x
+mt <- read.table("../mitochondrial_genes.txt", stringsAsFactors = F)$x
 
 # count UMIs assigned to mitochondrial genes
 mtUMI <- rbind(
@@ -347,3 +347,4 @@ write_csv(marker_clust_1, "activated_markers.csv")
 # save seurat object as rds object ----------------------------------------
 
 saveRDS(clean_seurat, "seurat_object.RDS")
+
