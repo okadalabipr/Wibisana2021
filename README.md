@@ -1,12 +1,9 @@
-# Wibisana2021
+# About this repository
 
+This repository contains the source codes for the sequence analysis used in the following paper.
 Imaging and single cell sequencinge analyses of super-enhancer activation mediated by NF-κB in B cells (Wibisana et al., 2021)
 
-## Introduction
-
-This repository contains the source codes for the sequence analysis used in the above paper.
-
-Relative paths under "src" are shown
+Relative paths under `src` are shown for codes and under `data` for data files.
 
 ## scRNA-seq analysis (1_RNAseq)
 
@@ -63,7 +60,7 @@ Downstream analysis (Clustering, pseudodose analysis, etc.)
 
 ## Data files
 
-### RelA-GFP foci data (../data/foci)
+### RelA-GFP foci data (1_foci)
 
 - 1_foci_quant.csv (All quantified foci across all dose and time points)
 - 2_foci_20min.csv (Quantified foci at 20 minutes across all dose points)
@@ -71,7 +68,7 @@ Downstream analysis (Clustering, pseudodose analysis, etc.)
 
 For both files, the first column `dose` contains information of the anti-IgM concentration. Column `CELL` contains unique cell identifier per viewpoint. `N_Q570` is the target RNA spot number, while `N_Q670` is GAPDH. Column `GFP ` contains RelA-GFP foci number measured using the same method with RNA-FISH spot quantification.
 
-### RNA-FISH data (../data/RNA_FISH)
+### RNA-FISH data (2_RNA_FISH)
 
 - CD83.csv
 - NFKBIA.csv
