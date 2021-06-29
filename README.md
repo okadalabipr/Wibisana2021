@@ -1,6 +1,6 @@
 # Wibisana2021
 
-Wibisana, JN et al., DT40 paper
+Imaging and single cell sequencinge analyses of super-enhancer activation mediated by NF-κB in B cells (Wibisana et al., 2021)
 
 ## Introduction
 
@@ -8,7 +8,7 @@ This repository contains the source codes for the sequence analysis used in the 
 
 Relative paths under "src" are shown
 
-### scRNA-seq analysis (1_RNAseq)
+## scRNA-seq analysis (1_RNAseq)
 
 Preprocessing data and alignment
 
@@ -18,14 +18,35 @@ Preprocessing data and alignment
 Downstream analysis (Clustering, pseudodose analysis, etc.)
 
 - 1-2_singlecell_analysis
+  - 1_scrnaseq_analysis.R
+  - 2_pseudotime.R
+  - 3_Fano_factor_calculations.R
+  - mito_genes.R (Function to retrieve mitochondrial gene annotations)
 
-### scATAC-seq analysis (2_ATACseq)
+## scATAC-seq analysis (2_ATACseq)
 
-Preprocessing of GTF file, FastQ data sampling and cellranger-atac pipeline
+### Preprocessing of GTF file, FastQ data sampling and cellranger-atac pipeline
 
 - 2-1_preprocessing_alignment_pipeline
   - 1_preprocessing_pipeline.sh
   - ggallus.config (cellranger-atac configuration file)
+- 2-2_peak_calling_manipulation
+  - 1_peak_calling.sh
+  - 2_merge_bed_annotate.sh
+- 2-3 SE_analysis
+  - 1_SE_analysis.R
 
+### Co-accessibility analysis
 
-### 
+- 2-4_coaccessibility analysis
+  - 0_1_chr_length.sh (get chromosome length from fasta file)
+  - 1_assign_fragments.R
+  - 2_cicero_main.R
+  - 3_cicero_analyze_change.R
+  - 4_annotate_conns.sh
+
+## scATAC-seq and scRNA-seq combined analysis
+
+- 3_RNA_atac
+  - 1_GO_analysis.R
+  - 2_Fano_analysis.R
