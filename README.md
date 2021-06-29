@@ -66,8 +66,6 @@ Downstream analysis (Clustering, pseudodose analysis, etc.)
 - 2_foci_20min.csv (Quantified foci at 20 minutes across all dose points)
 - 3_median_fitting.csv (Median quantified foci at 20 minutes across all dose points for fitting)
 
-For both files, the first column `dose` contains information of the anti-IgM concentration. Column `CELL` contains unique cell identifier per viewpoint. `N_Q570` is the target RNA spot number, while `N_Q670` is GAPDH. Column `GFP ` contains RelA-GFP foci number measured using the same method with RNA-FISH spot quantification.
-
 ### RNA-FISH data (2_RNA_FISH)
 
 - CD83.csv
