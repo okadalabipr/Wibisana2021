@@ -45,6 +45,12 @@ Downstream analysis (Clustering, pseudodose analysis, etc.)
   - 3_cicero_analyze_change.R
   - 4_annotate_conns.sh
 
+### Motif analysis
+
+- 2-5+motif_analysis
+  - 1_homer_to_fimo.R (Convert Homer motif files to Fimo motif files)
+  - 2_FIMO_motif_analysis.sh
+
 ## scATAC-seq and scRNA-seq combined analysis
 
 - 3_RNA_atac
