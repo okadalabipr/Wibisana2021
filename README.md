@@ -47,12 +47,33 @@ Downstream analysis (Clustering, pseudodose analysis, etc.)
 
 ### Motif analysis
 
-- 2-5+motif_analysis
+- 2-5_motif_analysis
   - 1_homer_to_fimo.R (Convert Homer motif files to Fimo motif files)
   - 2_FIMO_motif_analysis.sh
 
-## scATAC-seq and scRNA-seq combined analysis
+## scATAC-seq and scRNA-seq combined analysis (3_RNA_atac)
 
-- 3_RNA_atac
-  - 1_GO_analysis.R
-  - 2_Fano_analysis.R
+- 1_GO_analysis.R
+- 2_Fano_analysis.R
+
+## Foci fitting (4_foci)
+
+- 1_logistic_regression.R
+- 2_hill_fitting.R
+
+## Data files
+
+### RelA-GFP foci data (../data/foci)
+
+- 1_foci_quant.csv (All quantified foci across all dose and time points)
+- 2_foci_20min.csv (Quantified foci at 20 minutes across all dose points)
+- 3_median_fitting.csv (Median quantified foci at 20 minutes across all dose points for fitting)
+
+For both files, the first column `dose` contains information of the anti-IgM concentration. Column `CELL` contains unique cell identifier per viewpoint. `N_Q570` is the target RNA spot number, while `N_Q670` is GAPDH. Column `GFP ` contains RelA-GFP foci number measured using the same method with RNA-FISH spot quantification.
+
+### RNA-FISH data (../data/RNA_FISH)
+
+- CD83.csv
+- NFKBIA.csv
+
+For both files, the first column `dose` contains information of the anti-IgM concentration. Column `CELL` contains unique cell identifier per viewpoint. `N_Q570` is the target RNA spot number, while `N_Q670` is GAPDH. Column `GFP ` contains RelA-GFP foci number measured using the same method with RNA-FISH spot quantification.
