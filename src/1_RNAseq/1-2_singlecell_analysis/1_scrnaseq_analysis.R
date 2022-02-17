@@ -5,7 +5,7 @@ library(magrittr)
 library(RCurl)
 library(gt)
 
-source("../function_compilations/biomart_convert_geneid.R")
+source("convertid.R")
 
 
 # specify directories
