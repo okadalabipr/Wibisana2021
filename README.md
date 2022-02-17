@@ -20,6 +20,8 @@ Downstream analysis (Clustering, pseudodose analysis, etc.)
   - 1_scrnaseq_analysis.R
   - 2_pseudotime.R
   - 3_Fano_factor_calculations.R
+  - 4_hillanalysis.R
+  - 5_motif_counting_analysis.R
   - mito_genes.R (Function to retrieve mitochondrial gene annotations)
 
 ## scATAC-seq analysis (2_ATACseq)
@@ -49,6 +51,13 @@ Downstream analysis (Clustering, pseudodose analysis, etc.)
 - 2-5_motif_analysis
   - 1_homer_to_fimo.R (Convert Homer motif files to Fimo motif files)
   - 2_FIMO_motif_analysis.sh
+  - 3_homer_motif_analysis.sh
+
+### Primary B cell analysis
+
+- 2-6_primary_b_cell
+  - 1_download_files.sh
+  - 2_mapping_atac.sh
 
 ## scATAC-seq and scRNA-seq combined analysis (3_RNA_atac)
 
