@@ -3,7 +3,7 @@
 This repository contains the source codes for the sequence analysis used in the following paper.
 Enhanced transcriptional heterogeneity mediated by NF-κB super-enhancers (Wibisana et al., 2022)
 
-[https://www.biorxiv.org/content/10.1101/2021.07.13.452147v1](https://doi.org/10.1371/journal.pgen.1010235)
+[PLoS Genetics link](https://doi.org/10.1371/journal.pgen.1010235)
 
 Relative paths under `src` are shown for codes and under `data` for data files.
 
