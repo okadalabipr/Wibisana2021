@@ -1,9 +1,9 @@
 # About this repository
 
 This repository contains the source codes for the sequence analysis used in the following paper.
-Imaging and single cell sequencing analyses of super-enhancer activation mediated by NF-κB in B cells (Wibisana et al., 2021)
+Enhanced transcriptional heterogeneity mediated by NF-κB super-enhancers (Wibisana et al., 2022)
 
-https://www.biorxiv.org/content/10.1101/2021.07.13.452147v1
+[https://www.biorxiv.org/content/10.1101/2021.07.13.452147v1](https://doi.org/10.1371/journal.pgen.1010235)
 
 Relative paths under `src` are shown for codes and under `data` for data files.
 
